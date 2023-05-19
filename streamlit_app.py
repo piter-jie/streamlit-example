@@ -23,7 +23,7 @@ upload_file = st.file_uploader("选择一个测试文件传入",type=['.npy']) o
 
 # 加载为numpy数组  
 #data = np.load(io.BytesIO(file_bytes))  
-data = np.load(upload_file.name)
+data = np.load(upload_file)
 # 画信号波形图
 figure, axes = plt.subplots()
 axes.plot(data[:3000])
