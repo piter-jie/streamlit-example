@@ -17,7 +17,7 @@ import streamlit as st
 # Streamlit widgets automatically run the script from top to bottom. Since
 # this button is not connected to any other logic, it just causes a plain
 # rerun.
-upload_file = st.file_uploader("选择一个测试文件传入",type=['.npy']) or 'default.npy'
+upload_file = st.file_uploader("选择一个测试文件传入",type=['.npy']) 
 # 读取文件为字节流
 #file_bytes = upload_file.read()  
 
