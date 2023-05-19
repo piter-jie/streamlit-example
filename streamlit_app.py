@@ -40,5 +40,18 @@ figure.tight_layout()
 
 st.write("Signal Plot at Point A")
 st.pyplot(figure)
-# plt.plot(data[:3000])
+
+#显示进度条
+#st.write("10. st.progress()")
+import time
+st.write("正在检测故障类型")
+# 添加placeholder
+latest_iteration = st.empty()
+bar = st.progress(0)
+for i in range(100):
+    # 更新进度条
+    latest_iteration.text(f'Iteration {i+1}')
+    bar.progress(i+1)
+    time.sleep(0.1)
+'运行结束!'
 st.markdown('Streamlit Demo')
