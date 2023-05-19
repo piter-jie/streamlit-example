@@ -3,7 +3,9 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
-
+import torch
+import numpy as np
+import matplotlib.pyplot as plt
 """
 # Welcome to Streamlit!
 
@@ -63,3 +65,16 @@ progress_bar.empty()
 # this button is not connected to any other logic, it just causes a plain
 # rerun.
 st.button("Re-run")
+data = np.load('C:/Users/矿大物联网/Desktop/3s大赛/datacnn/data_vali/normal1.npy')
+# 画信号波形图
+figure, axes = plt.subplots()
+axes.plot(data)
+axes.set_title("Signal at Point A")
+axes.set_xlabel("Time")
+axes.set_ylabel("Amplitude")
+figure.tight_layout()
+
+st.write("Signal Plot at Point A")
+st.pyplot(figure)
+# plt.plot(data[:3000])
+st.markdown('Streamlit Demo')
