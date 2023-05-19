@@ -19,7 +19,7 @@ if page == "在线故障诊断":
     #st.write("这是页面 1 的内容")
 
     upload_file = st.file_uploader(
-        label = "选择一个测试文件传入",type=['.npy']
+        label = "请选择一个测试文件传入",type=['.npy']
     )
 
     if upload_file is not None:
