@@ -10,6 +10,8 @@ import matplotlib.pyplot as plt
 import time
 import numpy as np
 import streamlit as st
+
+import cm
 page = st.sidebar.selectbox("选择页面", ("在线故障诊断", "模型预测性能展示"))
 
 # 根据选择的页面显示不同的内容
