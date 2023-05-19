@@ -60,3 +60,4 @@ elif page == "模型预测性能展示":
     st.subheader("页面 2")
     # 页面 2 的内容
     st.write("这是页面 2 的内容")
+    st.write(cm.helloworld())
