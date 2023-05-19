@@ -23,7 +23,7 @@ upload_file = st.file_uploader("选择一个测试文件传入",type=['.npy'])
 def open_file(filename):
     if filename is None:
         raise ValueError('No file name provided')
-    data = np.load(upload_file)
+    data = np.load(filename)
 open_file(upload_file)
 
       
