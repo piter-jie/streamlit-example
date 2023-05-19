@@ -64,4 +64,4 @@ for i in range(100):
     bar.progress(i+1)
     time.sleep(0.1)
 '运行结束!'
-st.markdown('Streamlit Demo')
+st.markdown('故障类型检测结果：正常')
