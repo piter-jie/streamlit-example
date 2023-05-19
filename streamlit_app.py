@@ -20,11 +20,11 @@ import streamlit as st
 upload_file = st.file_uploader("选择一个测试文件传入",type=['.npy']) 
 # 读取文件为字节流
 #file_bytes = upload_file.read()
-def open_file(filename):
-    if filename is None:
-        raise ValueError('No file name provided')
-    data = np.load(filename)
-open_file(upload_file)
+if upload_file is None:
+    st.write('No file name provided')
+else:
+    data = np.load(upload_file)
+
 
       
 # 加载为numpy数组  
