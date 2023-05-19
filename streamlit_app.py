@@ -20,10 +20,14 @@ import streamlit as st
 upload_file = st.file_uploader("选择一个测试文件传入",type=['.npy']) 
 # 读取文件为字节流
 #file_bytes = upload_file.read()  
-
+if upload_file is not None:
+       
+        # 文件名
+       path_in = f.name
+      
 # 加载为numpy数组  
 #data = np.load(io.BytesIO(file_bytes))  
-data = np.load(upload_file)
+data = np.load(path_in)
 # 画信号波形图
 figure, axes = plt.subplots()
 axes.plot(data[:3000])
