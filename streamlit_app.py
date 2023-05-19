@@ -6,10 +6,7 @@ import streamlit as st
 import torch
 import numpy as np
 import matplotlib.pyplot as plt
-"""
-# 信号故障类型诊断
 
-"""
 import time
 import numpy as np
 import streamlit as st
