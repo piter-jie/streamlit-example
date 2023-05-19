@@ -3,5 +3,5 @@ pandas
 streamlit
 matplotlib==3.5.3
 numpy==1.21.6
-torch==1.13.1
+torch
 
