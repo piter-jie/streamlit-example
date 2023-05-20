@@ -31,20 +31,30 @@ if page == "在线故障诊断":
         #新加
         df = pd.DataFrame(data)
         buffer_size = 2000
+        done = False
         last_rows = df.loc[0:buffer_size-1,:]
 
         placeholder = st.line_chart(last_rows)
        
 
         for i in range(buffer_size, len(df), buffer_size):
-            #if i + buffer_size > len(df):   # 判断是否已读取df尾部
-                
-                #break
+            if i + buffer_size > len(df):# 判断是否已读取df尾部
+                done = True
+                break
             new_rows = df.loc[i:i+buffer_size-1,:]
             last_rows = np.vstack((last_rows,new_rows))  
             placeholder.add_rows(new_rows)
             last_rows = last_rows[-buffer_size:]
             time.sleep(0.05)
+        if not done:   
+            for i in range(i, len(df), buffer_size):
+                if i + buffer_size > len(df):  
+                    break 
+                new_rows = df.loc[i:i+buffer_size-1,:]
+                last_rows = np.vstack((last_rows,new_rows))
+                placeholder.add_rows(new_rows)
+                last_rows = last_rows[-buffer_size:]
+                time.sleep(0.05)
         
     else:
         st.stop() # 退出      
