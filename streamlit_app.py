@@ -28,21 +28,42 @@ if page == "在线故障诊断":
         # 不为空
         data = np.load(upload_file)
         st.success("上传文件成功！")
+        #新加
+        df = pd.DataFrame(data)
+
+        placeholder = st.line_chart(df.loc[0:4, :])
+
+        for i in range(5, len(df)):
+            new_row = df.loc[i:i, :]
+            last_rows = np.vstack((last_rows, new_row))
+            placeholder.add_rows(new_row)
+            time.sleep(0.2)
     else:
         st.stop() # 退出      
     # 加载为numpy数组  
     #data = np.load(io.BytesIO(file_bytes))  
     #data = np.load(upload_file)
-    # 画信号波形图
-    figure, axes = plt.subplots()
-    axes.plot(data[:3000])
-    axes.set_title("Signal at Point A")
-    axes.set_xlabel("Time")
-    axes.set_ylabel("Amplitude")
-    figure.tight_layout()
+    ## 画信号波形图
+    #figure, axes = plt.subplots()
+    #axes.plot(data[:3000])
+    #axes.set_title("Signal at Point A")
+    #axes.set_xlabel("Time")
+    #axes.set_ylabel("Amplitude")
+    #figure.tight_layout()
 
-    st.write("Signal Plot at Point A")
-    st.pyplot(figure)
+    #st.write("Signal Plot at Point A")
+    #st.pyplot(figure)
+    ##新的方法
+    
+    #修改版
+   
+    st.button("Re-run")
+
+# Streamlit widgets automatically run the script from top to bottom. Since
+# this button is not connected to any other logic, it just causes a plain
+# rerun.
+    
+  
 
     #显示进度条
     #st.write("10. st.progress()")
