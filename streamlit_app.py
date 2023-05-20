@@ -34,11 +34,11 @@ if page == "在线故障诊断":
         last_rows = df.loc[0:buffer_size-1,:]
 
         placeholder = st.line_chart(last_rows)
-        done = False
+       
 
         for i in range(buffer_size, len(df), buffer_size):
             if i + buffer_size > len(df):   # 判断是否已读取df尾部
-                done = True
+                
                 break
             new_rows = df.loc[i:i+buffer_size-1,:]
             last_rows = np.vstack((last_rows,new_rows))  
