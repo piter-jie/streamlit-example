@@ -37,9 +37,9 @@ if page == "在线故障诊断":
        
 
         for i in range(buffer_size, len(df), buffer_size):
-            if i + buffer_size > len(df):   # 判断是否已读取df尾部
+            #if i + buffer_size > len(df):   # 判断是否已读取df尾部
                 
-                break
+                #break
             new_rows = df.loc[i:i+buffer_size-1,:]
             last_rows = np.vstack((last_rows,new_rows))  
             placeholder.add_rows(new_rows)
