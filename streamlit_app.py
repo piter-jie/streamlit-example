@@ -60,7 +60,7 @@ if page == "在线故障诊断":
     
     #修改版
    
-    st.button("Re-run")
+    #st.button("Re-run")
 
 # Streamlit widgets automatically run the script from top to bottom. Since
 # this button is not connected to any other logic, it just causes a plain
