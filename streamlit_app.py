@@ -30,14 +30,18 @@ if page == "在线故障诊断":
         st.success("上传文件成功！")
         #新加
         df = pd.DataFrame(data)
+        buffer_size = 200
+        last_rows = df.loc[0:buffer_size-1,:]
 
-        placeholder = st.line_chart(df.loc[0:4, :])
+        placeholder = st.line_chart(last_rows)
 
-        for i in range(5, len(df)):
-            new_row = df.loc[i:i, :]
-            last_rows = np.vstack((last_rows, new_row))
-            placeholder.add_rows(new_row)
-            time.sleep(0.2)
+        for i in range(buffer_size, len(df), buffer_size):
+            new_rows = df.loc[i:i+buffer_size-1,:]
+            last_rows = np.vstack((last_rows,new_rows))  
+            placeholder.add_rows(new_rows)
+            placeholder.remove_rows(last_rows.index[:buffer_size])
+            last_rows = last_rows[:buffer_size]
+            time.sleep(0.05)   # 减小延时
     else:
         st.stop() # 退出      
     # 加载为numpy数组  
