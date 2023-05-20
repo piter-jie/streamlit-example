@@ -37,7 +37,7 @@ if page == "在线故障诊断":
 
         for i in range(buffer_size, len(df), buffer_size):
             new_rows = df.loc[i:i+buffer_size-1,:]
-            last_rows = np.vstack((last_rows,new_rows))  
+            last_rows = pd.DataFrame(np.vstack((last_rows,new_rows)))  
             placeholder.add_rows(new_rows)
             placeholder.remove_rows(last_rows.index[:buffer_size])
             last_rows = last_rows[:buffer_size]
