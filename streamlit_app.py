@@ -29,8 +29,8 @@ if page == "在线故障诊断":
         data = np.load(upload_file)
         st.success("上传文件成功！")
         #新加
-        df = pd.DataFrame(data)
-        buffer_size = 2000
+        df = pd.DataFrame(data[:12000])
+        buffer_size = 1000
         done = False
         last_rows = df.loc[0:buffer_size-1,:]
 
@@ -57,7 +57,8 @@ if page == "在线故障诊断":
                 time.sleep(0.05)
         
     else:
-        st.stop() # 退出      
+        st.stop() # 退出
+    st.button("Re-run")
     # 加载为numpy数组  
     #data = np.load(io.BytesIO(file_bytes))  
     #data = np.load(upload_file)
