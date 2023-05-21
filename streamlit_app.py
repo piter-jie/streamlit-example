@@ -45,7 +45,7 @@ if page == "在线故障诊断":
             last_rows = np.vstack((last_rows,new_rows))  
             placeholder.add_rows(new_rows)
             last_rows = last_rows[-buffer_size:]
-            time.sleep(0.1)
+            time.sleep(0.3)
         if not done:   
             for i in range(i, len(df), buffer_size):
                 if i + buffer_size > len(df):  
@@ -54,7 +54,7 @@ if page == "在线故障诊断":
                 last_rows = np.vstack((last_rows,new_rows))
                 placeholder.add_rows(new_rows)
                 last_rows = last_rows[-buffer_size:]
-                time.sleep(0.1)
+                time.sleep(0.3)
         
     else:
         st.stop() # 退出
@@ -95,7 +95,7 @@ if page == "在线故障诊断":
         # 更新进度条
         latest_iteration.text(f'Iteration {i+1}')
         bar.progress(i+1)
-        time.sleep(0.1)
+        time.sleep(0.2)
     '运行结束!'
     st.markdown('故障类型检测结果：正常')
 elif page == "模型预测性能展示":
