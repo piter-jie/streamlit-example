@@ -95,7 +95,7 @@ if page == "在线故障诊断":
         # 更新进度条
         latest_iteration.text(f'Iteration {i+1}')
         bar.progress(i+1)
-        time.sleep(0.2)
+        time.sleep(0.05)
     '运行结束!'
     st.markdown('故障类型检测结果：正常')
 elif page == "模型预测性能展示":
