@@ -45,7 +45,7 @@ if page == "在线故障诊断":
             last_rows = np.vstack((last_rows,new_rows))  
             placeholder.add_rows(new_rows)
             last_rows = last_rows[-buffer_size:]
-            time.sleep(0.05)
+            time.sleep(0.01)
         if not done:   
             for i in range(i, len(df), buffer_size):
                 if i + buffer_size > len(df):  
@@ -54,7 +54,7 @@ if page == "在线故障诊断":
                 last_rows = np.vstack((last_rows,new_rows))
                 placeholder.add_rows(new_rows)
                 last_rows = last_rows[-buffer_size:]
-                time.sleep(0.05)
+                time.sleep(0.01)
         
     else:
         st.stop() # 退出
