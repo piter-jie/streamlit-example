@@ -98,7 +98,7 @@ if page == "在线故障诊断":
         time.sleep(0.05)
     '运行结束!'
     st.write('故障类型检测结果是：')
-    st.subheader('正常')
+    st.subheader('内圈故障')
 elif page == "模型预测性能展示":
     st.subheader("页面 2")
     # 页面 2 的内容
