@@ -106,6 +106,4 @@ elif page == "模型预测性能展示":
     st.write(cm.helloworld())
 #st.sidebar.checkbox('Show status')
 #page = st.sidebar.selectbox("选择页面", ("在线故障诊断", "模型预测性能展示"))
-with st.sidebar.beta_container():     
-    st.selectbox('Occupation', ['Student', 'Software Engineer']) 
-
+st.sidebar.header('Settings', vertical_spacing=5)
