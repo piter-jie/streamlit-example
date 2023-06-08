@@ -104,6 +104,6 @@ elif page == "模型预测性能展示":
     # 页面 2 的内容
     st.write("这是页面 2 的内容")
     st.write(cm.helloworld())
-show_status = st.sidebar.checkbox('Show status')
+st.sidebar.checkbox('Show status')
 page = st.sidebar.selectbox("选择页面", ("在线故障诊断", "模型预测性能展示"))
 
