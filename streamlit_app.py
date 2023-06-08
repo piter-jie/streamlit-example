@@ -99,7 +99,7 @@ if page == "在线故障诊断":
     '运行结束!'
     st.write('故障类型检测结果是：')
     st.subheader('内圈故障')
-st.sidebar.selectbox("选择页面", ("在线故障诊断", "模型预测性能展示"))
+#st.sidebar.selectbox("选择页面", ("在线故障诊断", "模型预测性能展示"))
 elif page == "模型预测性能展示":
     st.subheader("页面 2")
     # 页面 2 的内容
